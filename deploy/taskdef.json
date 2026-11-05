@@ -1,0 +1,30 @@
+{
+  "family": "onward-dev-orders",
+  "executionRoleArn": "arn:aws:iam::438465164038:role/onward-dev-ecs-service-TaskExecutionRole-QmDF1asDQglz",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX",
+    "cpuArchitecture": "X86_64"
+  },
+  "containerDefinitions": [
+    {
+      "name": "orders-app",
+      "image": "<IMAGE1_NAME>",
+      "essential": true,
+      "portMappings": [
+        { "containerPort": 8080, "protocol": "tcp" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/onward-dev-orders",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "orders"
+        }
+      }
+    }
+  ]
+}
