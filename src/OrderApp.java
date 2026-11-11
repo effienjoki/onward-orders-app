@@ -77,7 +77,7 @@ public class OrderApp {
         }
 
         String form = """
-            <h2>Place an order</h2>
+            <h2>Place an order-V2</h2>
             <form method="post" action="/orders">
               <label>Customer name <input name="customer" maxlength="100" required></label>
               <label>Parcel description <input name="parcel" maxlength="100" required></label>
